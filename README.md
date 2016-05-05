@@ -1,7 +1,5 @@
-thoughtbot dotfiles
+Pierolenzo dotfiles
 ===================
-
-![prompt](http://images.thoughtbot.com/thoughtbot-dotfiles-prompt.png)
 
 Requirements
 ------------
@@ -32,7 +30,7 @@ Install the dotfiles:
 After the initial installation, you can run `rcup` without the one-time variable
 `RCRC` being set (`rcup` will symlink the repo's `rcrc` to `~/.rcrc` for future
 runs of `rcup`). [See
-example](https://github.com/thoughtbot/dotfiles/blob/master/rcrc).
+example](https://github.com/pierolenzo/dotfiles/blob/master/rcrc).
 
 This command will create symlinks for config files in your home directory.
 Setting the `RCRC` environment variable tells `rcup` to use standard
@@ -215,22 +213,14 @@ in this project.
 License
 -------
 
-dotfiles is copyright © 2009-2016 thoughtbot. It is free software, and may be
+dotfiles is copyright © 2009-2016 pierolenzo. It is free software, and may be
 redistributed under the terms specified in the [`LICENSE`] file.
 
 [`LICENSE`]: /LICENSE
 
-About thoughtbot
+About pierolenzo
 ----------------
 
-![thoughtbot](https://thoughtbot.com/logo.png)
 
-dotfiles is maintained and funded by thoughtbot, inc.
-The names and logos for thoughtbot are trademarks of thoughtbot, inc.
+dotfiles is maintained and funded by pierolenzo.
 
-We love open source software!
-See [our other projects][community].
-We are [available for hire][hire].
-
-[community]: https://thoughtbot.com/community?utm_source=github
-[hire]: https://thoughtbot.com/hire-us?utm_source=github
