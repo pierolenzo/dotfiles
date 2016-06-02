@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
   export ZSH=~/.oh-my-zsh
+  source $ZSH/oh-my-zsh.sh
 
 # export DEFAULT_USER="$USER"
 
@@ -8,7 +9,7 @@
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="bullet-train"
-ZSH_THEME="philips"
+#ZSH_THEME="philips"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -56,24 +57,53 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/home/piero/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/telegram:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin"
+typeset -U path
+path=( $HOME/bin
+      $HOME/.local/bin
+      /usr/local/sbin
+      /usr/local/bin
+      /usr/local/games
+      /usr/sbin
+      /usr/bin
+      /sbin
+      /bin
+      /usr/games
+      /opt/telegram
+      /usr/lib/jvm/java-8-oracle/bin
+      /usr/lib/jvm/java-8-oracle/db/bin
+      /usr/lib/jvm/java-8-oracle/jre/bin
+      $HOME/.linuxbrew/bin
+      $path )
+export PATH
 # export MANPATH="/usr/local/man:$MANPATH"
-export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 
-source $ZSH/oh-my-zsh.sh
+source /home/piero/.local/lib/python2.7/site-packages/powerline_status-2.4-py2.7.egg/powerline/bindings/zsh/powerline.zsh
+
+# Base16 Shell
+# if [ -z "$THEME" ]; then
+    export THEME="base16-atelierlakeside"
+# fi
+if [ -z "$BACKGROUND" ]; then
+    export BACKGROUND="dark"
+fi
+
+#BASE16_SHELL="$HOME/.config/base16-shell/$THEME.$BACKGROUND.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+#source $BASE16_SHELL
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+#if [[ -n $SSH_CONNECTION ]]; then
+#  export EDITOR='vim'
+#else
+#  export EDITOR='nvim'
+#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -87,6 +117,5 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#source /home/piero/.local/lib/python2.7/site-packages/powerline_status-2.3.dev9999+git.38ce0e73c8a21793d147581ba8932252154e7e3b-py2.7.egg/powerline/bindings/zsh/powerline.zsh
+# alias zshconfig="nvim ~/.zshrc"
+# alias ohmyzsh="nvim ~/.oh-my-zsh"
