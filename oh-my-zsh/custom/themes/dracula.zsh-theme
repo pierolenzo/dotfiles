@@ -1,0 +1,1 @@
+/home/piero/Documents/Repo/dracula-zsh/dracula.zsh-theme

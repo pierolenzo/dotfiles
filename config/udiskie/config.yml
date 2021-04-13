@@ -1,0 +1,10 @@
+program_options:
+    tray: true
+    appindicator: true
+    menu: flat
+    notify: true
+device_config:
+#- id_type: vfat
+#  options: [uid=1000, gid=1000, umask=000, dmask=022, fmask=133]
+- id_type: ntfs
+  options: [uid=1000, gid=1000, umask=000, dmask=022, fmask=133, windows_names]

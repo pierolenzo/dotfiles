@@ -1,0 +1,14 @@
+[Unit]
+Description=swayfader Makes inactive workspace windows transparent
+PartOf=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/piero/.local/bin/swayfader.py
+ExecStop=/bin/kill -2 $MAINPID
+Restart=on-failure
+RestartSec=1
+TimeoutStopSec=10
+
+[Install]
+WantedBy=sway-session.target

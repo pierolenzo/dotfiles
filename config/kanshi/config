@@ -1,0 +1,9 @@
+profile desk {
+    output HDMI-A-1 mode 1440x900 position 0,0
+    output eDP-1 mode 1366x768 position 1440,0
+    exec swaymsg workspace 1, move workspace to HDMI-A-1
+}
+
+profile laptop {
+    output eDP-1 mode 1366x768 position 0,0
+}
