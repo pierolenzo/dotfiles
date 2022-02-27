@@ -1,0 +1,5 @@
+pane	Develop	0	:vim	1	:*	0	:/home/piero/Project/Develhope/pokeapi	1	vim	:vim .
+pane	Develop	0	:vim	1	:*	1	:/home/piero/Project/Develhope/pokeapi	0	npm	:npm start
+pane	Develop	0	:vim	1	:*	2	:/home/piero/Project/Develhope/pokeapi	0	zsh	:
+window	Develop	0	1	:*	c0f3,151x39,0,0[151x28,0,0,1,151x10,0,29{75x10,0,29,2,75x10,76,29,3}]
+state	Develop	

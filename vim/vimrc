@@ -2,7 +2,11 @@ set number
 filetype indent on
 set noswapfile
 set mouse=a
-set ttymouse=sgr
+"set ttymouse=sgr
+" set nowrap
+set expandtab
+set backupcopy=yes
+"set termguicolors
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -10,7 +14,7 @@ set ttymouse=sgr
 call plug#begin('~/.vim/plugged')
 " Base-16 Themes
 Plug 'chriskempson/base16-vim'
-Plug 'dawikur/base16-vim-airline-themes', "{'do': './after.sh'}
+Plug 'dawikur/base16-vim-airline-themes', {'do': './after.sh'}
 Plug 'ryanoasis/vim-devicons'
 " Use release branch (recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -21,7 +25,15 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'honza/vim-snippets'
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
+Plug 'Yggdroot/indentLine'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'ap/vim-css-color'
+"Plug 'edkolev/tmuxline.vim'
+" Install manually Plug 'mattn/webapi-vim'
 "Initialize plugin system
 call plug#end()
 
@@ -31,16 +43,21 @@ let g:coc_global_extensions = [
 \ 'coc-diagnostic',
 \ 'coc-html',
 \ 'coc-css',
+\ 'coc-cssmodules',
 \ 'coc-tsserver',
 \ 'coc-vetur',
 \ 'coc-eslint',
 \ 'coc-json',
 \ 'coc-flutter',
+\ 'coc-angular',
+\ 'coc-prettier',
+\ 'coc-snippets',
+\ 'coc-yaml',
 \ ]
 
 let g:user_emmet_settings = {
 \  'html' : {
-\    'block_all_childless' : 1,
+\    'indent_blockelement': 1,
 \    }
 \  }
 
@@ -62,6 +79,10 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" coc-css
+autocmd FileType scss setl iskeyword+=@-@
+autocmd FileType sass setl iskeyword+=@-@
 
 "
 " Coc.vim settings

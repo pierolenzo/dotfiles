@@ -1,0 +1,5 @@
+pane	0	0	:zsh	1	:*	0	:/home/piero/Project/Develhope/pokeapi/src	0	vim	:vim .
+pane	0	0	:zsh	1	:*	1	:/home/piero/Project/Develhope/pokeapi	1	zsh	:
+pane	0	0	:zsh	1	:*	2	:/home/piero/Project/Develhope/pokeapi	0	zsh	:
+window	0	0	1	:*	4e96,101x33,0,0[101x24,0,0,0,101x8,0,25{52x8,0,25,1,48x8,53,25,2}]
+state	0	

@@ -1,0 +1,5 @@
+pane	0	0	:ng	1	:*	0	:/home/piero/Project/Develhope/pokeapi/src	0	vim	:vim .
+pane	0	0	:ng	1	:*	1	:/home/piero/Project/Develhope/pokeapi	1	ng	:ng serve
+pane	0	0	:ng	1	:*	2	:/home/piero	0	zsh	:
+window	0	0	1	:*	e58f,101x35,0,0[101x25,0,0,0,101x9,0,26{61x9,0,26,1,39x9,62,26,2}]
+state	0	

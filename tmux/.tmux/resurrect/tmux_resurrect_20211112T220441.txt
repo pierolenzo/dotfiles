@@ -1,0 +1,5 @@
+pane	0	0	:zsh	1	:*	0	:/home/piero/Project/Develhope/pokeapi	0	zsh	:
+pane	0	0	:zsh	1	:*	1	:/home/piero/Project/Develhope/pokeapi	1	git	:git log
+pane	0	0	:zsh	1	:*	2	:/home/piero/Project/Develhope/pokeapi	0	zsh	:
+window	0	0	1	:*	b799,151x39,0,0[151x27,0,0,1,151x11,0,28{77x11,0,28,2,73x11,78,28,3}]
+state	0	

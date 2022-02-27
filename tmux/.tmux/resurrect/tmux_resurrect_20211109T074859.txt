@@ -1,0 +1,5 @@
+pane	0	0	:zsh	1	:*	0	:/home/piero/Project/Develhope/pokeapi	1	zsh	:
+pane	0	0	:zsh	1	:*	1	:/home/piero	0	zsh	:
+pane	0	0	:zsh	1	:*	2	:/home/piero	0	zsh	:
+window	0	0	1	:*	8ad6,101x35,0,0[101x28,0,0,0,101x6,0,29{52x6,0,29,1,48x6,53,29,2}]
+state	0	

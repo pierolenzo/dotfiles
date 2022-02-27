@@ -8,7 +8,7 @@ export ZSH="/home/piero/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME="dracula"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +68,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo git zsh-autosuggestions fast-syntax-highlighting colored-man-pages colorize safe-paste microk8s nvm sdk tmux pip cargo fzf django python adb aws fd)
+plugins=(sudo git zsh-autosuggestions fast-syntax-highlighting colored-man-pages colorize safe-paste microk8s nvm npm node sdk tmux pip rust fzf python adb aws fd ng poetry)
 #plugins=(sudo git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -78,7 +78,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/development/flutter/bin:$PATH
-export CHROME_EXECUTABLE=google-chrome-stable
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+#export CHROME_EXECUTABLE=google-chrome-stable
 #path=( $HOME/bin
 #       $HOME/.local/bin
 #       /usr/local/sbin
@@ -101,10 +102,10 @@ export CHROME_EXECUTABLE=google-chrome-stable
 #
 # XDG user directories
 #
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CURRENT_DESKTOP=sway
+#export XDG_DATA_HOME="$HOME/.local/share"
+#export XDG_CONFIG_HOME="$HOME/.config"
+#export XDG_CACHE_HOME="$HOME/.cache"
+#export XDG_CURRENT_DESKTOP=sway
 #
 #
 #export GDK_BACKEND=wayland
@@ -144,16 +145,49 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
 #
-export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
-export NNN_FIFO=/tmp/nnn.fifo
-typeset -U PATH
+#export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
+#export NNN_FIFO=/tmp/nnn.fifo
 #
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && [ -s "$BASE16_SHELL/profile_helper.sh" ] && eval "$("$BASE16_SHELL/profile_helper.sh")"
 #
+
+# Base16 Gruvbox dark, medium
+# Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+
+_gen_fzf_default_opts() {
+
+local color00='#282828'
+local color01='#3c3836'
+local color02='#504945'
+local color03='#665c54'
+local color04='#bdae93'
+local color05='#d5c4a1'
+local color06='#ebdbb2'
+local color07='#fbf1c7'
+local color08='#fb4934'
+local color09='#fe8019'
+local color0A='#fabd2f'
+local color0B='#b8bb26'
+local color0C='#8ec07c'
+local color0D='#83a598'
+local color0E='#d3869b'
+local color0F='#d65d0e'
+
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"\
+" --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D"\
+" --color=fg:$color04,header:$color0D,info:$color0A,pointer:$color0C"\
+" --color=marker:$color0C,fg+:$color06,prompt:$color0A,hl+:$color0D"
+
+}
+
+_gen_fzf_default_opts
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/piero/.sdkman"
 [[ -s "/home/piero/.sdkman/bin/sdkman-init.sh" ]] && source "/home/piero/.sdkman/bin/sdkman-init.sh"
+
+typeset -U PATH

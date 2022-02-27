@@ -1,0 +1,3 @@
+pane	0	0	:zsh	1	:*	0	:/home/piero	1	vim	:vim
+window	0	0	1	:*	ce3e,151x39,0,0,1
+state	0	
