@@ -8,7 +8,7 @@ export ZSH="/home/piero/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+#ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +68,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(sudo git zsh-autosuggestions fast-syntax-highlighting colored-man-pages colorize safe-paste microk8s nvm npm node sdk tmux pip rust fzf python adb aws fd ng poetry)
+plugins=(sudo git zsh-autosuggestions fast-syntax-highlighting colored-man-pages colorize safe-paste microk8s nvm npm node sdk tmux pip rust fzf python adb aws fd ng poetry terraform)
 #plugins=(sudo git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -78,7 +78,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/development/flutter/bin:$PATH
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH=$HOME/.pub-cache/bin:$PATH
+export PATH=$HOME/.local/go/bin:$PATH
 #export CHROME_EXECUTABLE=google-chrome-stable
 #path=( $HOME/bin
 #       $HOME/.local/bin
@@ -145,7 +146,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#eval "$(starship init zsh)"
 #
 #export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
 #export NNN_FIFO=/tmp/nnn.fifo
@@ -191,3 +191,7 @@ export SDKMAN_DIR="/home/piero/.sdkman"
 [[ -s "/home/piero/.sdkman/bin/sdkman-init.sh" ]] && source "/home/piero/.sdkman/bin/sdkman-init.sh"
 
 typeset -U PATH
+eval "$(starship init zsh)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
